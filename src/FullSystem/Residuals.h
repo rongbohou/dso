@@ -33,7 +33,7 @@
 #include <fstream>
 #include "util/globalFuncs.h"
 #include "OptimizationBackend/RawResidualJacobian.h"
-
+#include<Eigen/StdVector>
 namespace dso
 {
 class PointHessian;
@@ -48,6 +48,7 @@ enum ResState {IN=0, OOB, OUTLIER};
 
 struct FullJacRowT
 {
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	Eigen::Vector2f projectedTo[MAX_RES_PER_POINT];
 };
 
@@ -100,7 +101,7 @@ public:
 
 	void debugPlot();
 
-	void printRows(std::vector<VecX> &v, VecX &r, int nFrames, int nPoints, int M, int res);
+	void printRows(std::vector<VecX,Eigen::aligned_allocator<VecX>> &v, VecX &r, int nFrames, int nPoints, int M, int res);
 };
 }
 

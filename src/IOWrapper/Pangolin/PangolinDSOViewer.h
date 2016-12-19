@@ -29,7 +29,7 @@
 #include "IOWrapper/Output3DWrapper.h"
 #include <map>
 #include <deque>
-
+#include<Eigen/StdVector>
 
 namespace dso
 {
@@ -46,6 +46,7 @@ class KeyFrameDisplay;
 
 struct GraphConnection
 {
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	KeyFrameDisplay* from;
 	KeyFrameDisplay* to;
 	int fwdMarg, bwdMarg, fwdAct, bwdAct;
@@ -55,6 +56,7 @@ struct GraphConnection
 class PangolinDSOViewer : public Output3DWrapper
 {
 public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
     PangolinDSOViewer(int w, int h, bool startRunThread=true);
 	virtual ~PangolinDSOViewer();
 
@@ -103,9 +105,9 @@ private:
 	boost::mutex model3DMutex;
 	KeyFrameDisplay* currentCam;
 	std::vector<KeyFrameDisplay*> keyframes;
-	std::vector<Vec3f> allFramePoses;
+	std::vector<Vec3f,Eigen::aligned_allocator<Vec3f>> allFramePoses;
 	std::map<int, KeyFrameDisplay*> keyframesByKFID;
-	std::vector<GraphConnection> connections;
+	std::vector<GraphConnection,Eigen::aligned_allocator<GraphConnection>> connections;
 
 
 

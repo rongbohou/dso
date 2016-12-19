@@ -394,7 +394,9 @@ int main( int argc, char** argv )
 	FullSystem* fullSystem = new FullSystem();
 	fullSystem->setGammaFunction(reader->getPhotometricGamma());
 	fullSystem->linearizeOperation = (playbackSpeed==0);
-
+	/*FullSystem  fullSystem;
+	fullSystem.setGammaFunction(reader->getPhotometricGamma());
+	fullSystem.linearizeOperation = (playbackSpeed==0);*/
 
 
 
@@ -406,6 +408,7 @@ int main( int argc, char** argv )
     {
         viewer = new IOWrap::PangolinDSOViewer(wG[0],hG[0], false);
         fullSystem->outputWrapper.push_back(viewer);
+        //fullSystem.outputWrapper.push_back(viewer);
     }
 
 

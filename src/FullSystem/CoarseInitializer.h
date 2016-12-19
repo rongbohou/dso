@@ -43,6 +43,7 @@ struct FrameHessian;
 struct Pnt
 {
 public:
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	// index in jacobian. never changes (actually, there is no reason why).
 	float u,v;
 
@@ -77,6 +78,7 @@ public:
 
 class CoarseInitializer {
 public:
+	 EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	CoarseInitializer(int w, int h);
 	~CoarseInitializer();
 
@@ -164,6 +166,7 @@ private:
 
 struct FLANNPointcloud
 {
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
     inline FLANNPointcloud() {num=0; points=0;}
     inline FLANNPointcloud(int n, Pnt* p) :  num(n), points(p) {}
 	int num;

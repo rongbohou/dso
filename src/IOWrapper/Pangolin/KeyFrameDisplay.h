@@ -44,6 +44,7 @@ namespace IOWrap
 template<int ppp>
 struct InputPointSparse
 {
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	float u;
 	float v;
 	float idpeth;
@@ -65,6 +66,7 @@ class KeyFrameDisplay
 {
 
 public:
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	KeyFrameDisplay();
 	~KeyFrameDisplay();
 

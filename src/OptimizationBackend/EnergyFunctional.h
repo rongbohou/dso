@@ -30,7 +30,7 @@
 #include "vector"
 #include <math.h>
 #include "map"
-
+#include<Eigen/StdVector>
 
 namespace dso
 {
@@ -59,6 +59,7 @@ extern bool EFDeltaValid;
 
 class EnergyFunctional {
 public:
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	friend class EFFrame;
 	friend class EFPoint;
 	friend class EFResidual;
@@ -113,14 +114,14 @@ public:
 	IndexThreadReduce<Vec10>* red;
 
 
-	std::map<long,Eigen::Vector2i> connectivityMap;
+std::map<long,Eigen::Vector2i> connectivityMap;//?
 
 private:
 
 	VecX getStitchedDeltaF() const;
 
-	void resubstituteF_MT(VecX x, CalibHessian* HCalib, bool MT);
-	void resubstituteFPt(VecCf xc, Mat18f* xAd, int min, int max, Vec10* stats, int tid);
+	void resubstituteF_MT(const VecX x, CalibHessian* HCalib, bool MT);
+	void resubstituteFPt(const VecCf xc, Mat18f* xAd, int min, int max, Vec10* stats, int tid);
 
 	void accumulateAF_MT(MatXX &H, VecX &b, bool MT);
 	void accumulateLF_MT(MatXX &H, VecX &b, bool MT);

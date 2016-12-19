@@ -34,7 +34,7 @@ template<int i, int j>
 class AccumulatorXX
 {
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   Eigen::Matrix<float,i,j> A;
   Eigen::Matrix<float,i,j> A1k;
@@ -88,7 +88,7 @@ private:
 class Accumulator11
 {
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   float A;
   size_t num;
@@ -175,7 +175,7 @@ template<int i>
 class AccumulatorX
 {
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   Eigen::Matrix<float,i,1> A;
   Eigen::Matrix<float,i,1> A1k;
@@ -243,7 +243,7 @@ private:
 class Accumulator14
 {
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   Mat1414f H;
   Vec14f b;
@@ -592,7 +592,7 @@ private:
 class AccumulatorApprox
 {
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   Mat1313f H;
   size_t num;
@@ -979,7 +979,7 @@ private:
 class Accumulator9
 {
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 
   Mat99f H;
   Vec9f b;

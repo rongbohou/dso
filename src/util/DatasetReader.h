@@ -78,6 +78,7 @@ inline int getdir (std::string dir, std::vector<std::string> &files)
 
 struct PrepImageItem
 {
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	int id;
 	bool isQueud;
 	ImageAndExposure* pt;
@@ -102,6 +103,7 @@ struct PrepImageItem
 class ImageFolderReader
 {
 public:
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	ImageFolderReader(std::string path, std::string calibFile, std::string gammaFile, std::string vignetteFile)
 	{
 		this->path = path;

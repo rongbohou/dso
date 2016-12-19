@@ -113,6 +113,7 @@ namespace IOWrap
 class Output3DWrapper
 {
 public:
+        EIGEN_MAKE_ALIGNED_OPERATOR_NEW
         Output3DWrapper() {}
         virtual ~Output3DWrapper() {}
 
@@ -127,7 +128,7 @@ public:
          *  Calling:
          *  Always called, no overhead if not used.
          */
-        virtual void publishGraph(const std::map<long,Eigen::Vector2i> &connectivity) {}
+        virtual void publishGraph(const std::map<long,Eigen::Vector2i > &connectivity) {}
 
 
 

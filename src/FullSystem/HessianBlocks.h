@@ -76,6 +76,7 @@ class EFPoint;
 
 struct FrameFramePrecalc
 {
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	// static values
 	static int instanceCounter;
 	FrameHessian* host;	// defines row
@@ -108,6 +109,7 @@ struct FrameFramePrecalc
 
 struct FrameHessian
 {
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	EFFrame* efFrame;
 
 	// constant info & pre-calculated values
@@ -163,7 +165,7 @@ struct FrameHessian
 	// precalc values
 	SE3 PRE_worldToCam;
 	SE3 PRE_camToWorld;
-	std::vector<FrameFramePrecalc> targetPrecalc;
+	std::vector<FrameFramePrecalc,Eigen::aligned_allocator<FrameFramePrecalc>> targetPrecalc;
 	MinimalImageB3* debugImage;
 
 
@@ -296,6 +298,7 @@ struct FrameHessian
 
 struct CalibHessian
 {
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	static int instanceCounter;
 
 	VecC value_zero;

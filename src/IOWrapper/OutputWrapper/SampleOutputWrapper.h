@@ -46,6 +46,7 @@ namespace IOWrap
 class SampleOutputWrapper : public Output3DWrapper
 {
 public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
         inline SampleOutputWrapper()
         {
             printf("OUT: Created SampleOutputWrapper\n");

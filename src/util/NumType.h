@@ -165,6 +165,7 @@ typedef Eigen::Matrix<double,14,1> Vec14;
 // transforms points from one frame to another.
 struct AffLight
 {
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	AffLight(double a_, double b_) : a(a_), b(b_) {};
 	AffLight() : a(0), b(0) {};
 

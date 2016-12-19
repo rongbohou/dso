@@ -41,7 +41,7 @@
 #include <cmath>
 
 #include <algorithm>
-
+#include<Eigen/StdVector>
 namespace dso
 {
 
@@ -416,8 +416,6 @@ float FullSystem::optimize(int mnumOptIts)
 
 
 
-	std::ofstream logfile;
-
 
 	// get statistics and active residuals.
 
@@ -568,7 +566,10 @@ float FullSystem::optimize(int mnumOptIts)
 
 
 	if(!std::isfinite((double)lastEnergy[0]) || !std::isfinite((double)lastEnergy[1]) || !std::isfinite((double)lastEnergy[2]))
+    {
+        printf("KF Tracking failed: LOST!\n");
 		isLost=true;
+    }
 
 
 	statistics_lastFineTrackRMSE = sqrtf((float)(lastEnergy[0] / (patternNum*ef->resInA)));

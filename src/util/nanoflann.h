@@ -97,6 +97,7 @@ namespace nanoflann
 		CountType count;
 
 	public:
+
 		inline KNNResultSet(CountType capacity_) : indices(0), dists(0), capacity(capacity_), count(0)
 		{
 		}
@@ -325,6 +326,7 @@ namespace nanoflann
 	template<class T, class DataSource, typename _DistanceType = T>
 	struct L2_Adaptor
 	{
+
 		typedef T ElementType;
 		typedef _DistanceType DistanceType;
 

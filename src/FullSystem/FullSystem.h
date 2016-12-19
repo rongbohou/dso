@@ -40,7 +40,7 @@
 #include "FullSystem/PixelSelector2.h"
 
 #include <math.h>
-
+#include<Eigen/StdVector>
 namespace dso
 {
 namespace IOWrap
@@ -130,6 +130,7 @@ inline bool eigenTestNan(MatXX m, std::string msg)
 
 class FullSystem {
 public:
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 	FullSystem();
 	virtual ~FullSystem();
 
